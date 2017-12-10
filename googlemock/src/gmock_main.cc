@@ -30,6 +30,7 @@
 // Author: wan@google.com (Zhanyong Wan)
 
 #include <iostream>
+#include <windows.h>
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 
@@ -50,5 +51,8 @@ GTEST_API_ int main(int argc, char** argv) {
   // also responsible for initializing Google Test.  Therefore there's
   // no need for calling testing::InitGoogleTest() separately.
   testing::InitGoogleMock(&argc, argv);
-  return RUN_ALL_TESTS();
+  int ret_code = 0;
+  ret_code = RUN_ALL_TESTS();
+  system("pause");
+  return ret_code;
 }
